@@ -1,6 +1,3 @@
-
-
-
 /* google font url */
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Noto+Serif+Bengali:wght@100..900&display=swap');
 
@@ -19,12 +16,27 @@ body {
   font-family: "Noto Serif Bengali", serif;
 }
 
-.deepPurple{
+.deepPurple {
   background: #7C449A;
 }
-.lightPurple{
+
+.lightPurple {
   background: #D8BAD7;
 }
-.content_container{
+.textDeepPurple {
+  color: #7C449A;
+}
+
+.textLightPurple {
+  color: #D8BAD7;
+}
+
+.content_container {
   max-width: 1170px;
+}
+
+
+nav .active {
+  background: #E6097F !important;
+
 }
