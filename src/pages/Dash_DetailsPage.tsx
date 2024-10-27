@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { useCreatePackageMutation, useDeletePackageMutation, useGetAllPackageQuery, useUpdatePackageMutation } from '../redux/api/packageApi';
+import { useCreatePackageMutation, useDeletePackageMutation, useGetAllPackageQuery } from '../redux/api/packageApi';
 import Swal from 'sweetalert2';
 import { Single_Package_Type } from '../components/Global/package_type';
 import { Link } from 'react-router-dom';
@@ -63,7 +63,7 @@ const Dash_DetailsPage = () => {
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         icon: "warning",
-        showCancelButton: true,
+        showCancelButton: true, 
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!"

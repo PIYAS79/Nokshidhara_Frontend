@@ -4,20 +4,20 @@ import { useGetAllOrderQuery } from "../redux/api/orderApi";
 
 const Dashboard_OrderPage = () => {
   const { data: orders } = useGetAllOrderQuery(undefined);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
-  const [selectedOrderNote, setSelectedOrderNote] = useState(""); // State to store the selected order note
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [selectedOrderNote, setSelectedOrderNote] = useState(""); 
 
   const openModal = (note: string) => {
-    setSelectedOrderNote(note); // Set the order note to display
-    setIsModalOpen(true); // Open the modal
+    setSelectedOrderNote(note); 
+    setIsModalOpen(true); 
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
   };
 
   return (
-    <div>
+    <div className="h-full overflow-y-scroll">
       <h1 className="text-center text-3xl font-semibold textDeepPurple mt-3">
         Order Details
       </h1>

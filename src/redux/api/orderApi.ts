@@ -26,33 +26,23 @@ const orderApi = baseApi.injectEndpoints({
                 return res.data;
             }
         }),
-        // deletePackage: builder.mutation({
-        //     query: (pid) => ({
-        //         url: `/package/${pid}`,
-        //         method: "DELETE"
-        //     }),
-        //     invalidatesTags: ['package'],
-        //     transformResponse: (res: any) => {
-        //         return res.data;
-        //     }
-        // }),
-        // updatePackage: builder.mutation({
-        //     query: ({data,pid}) => ({
-        //         url: `/package/${pid}`,
-        //         method: "PATCH",
-        //         body:data
-        //     }),
-        //     invalidatesTags: ['package'],
-        //     transformResponse: (res: any) => {
-        //         return res.data;
-        //     }
-        // }),
+        updateOrder: builder.mutation({
+            query: ({data,oid}) => ({
+                url: `/order/update/${oid}`,
+                method: "PATCH",
+                body:data
+            }),
+            invalidatesTags: ['order'],
+            transformResponse: (res: any) => {
+                return res.data;
+            }
+        }),
     })
 })
 
 export const {
     useCreateOrderMutation,
     useGetAllOrderQuery,
-
+    useUpdateOrderMutation,
 
 } = orderApi;

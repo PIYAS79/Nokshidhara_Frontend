@@ -24,7 +24,7 @@ const Dashboard_PanelPage = () => {
 
 
 
-      <form className="card-body max-w-2xl mx-auto  mb-24">
+      <form className="card-body max-w-2xl mx-auto  ">
 
 
         <div className="form-control">

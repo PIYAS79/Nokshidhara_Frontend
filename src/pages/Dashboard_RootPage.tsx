@@ -7,12 +7,12 @@ const Dashboard_RootPage = () => {
     return (
         <div className="h-[100vh] overflow-y-hidden">
             <Dash_Header />
-            <div className="h-full">
+            <div className="h-[calc(100vh-120px)]">
                 <div className="flex h-full">
                     <div className="lightPurple w-[340px]">
                         <Dash_Sidebar/>
                     </div>
-                    <div className="w-full">
+                    <div className="w-full h-full">
                         <Outlet />
                     </div>
                 </div>
