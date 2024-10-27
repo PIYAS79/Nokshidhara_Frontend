@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 const FastOrder = () => {
@@ -9,7 +10,9 @@ const FastOrder = () => {
                 <p className='text-[32px]'>বেবি নকশীকাঁথা ও  চেক পিন্ট কাঁথা ৬ পিস ১ টি ইউরিন ম্যাট কম্বো প্যাকেজ।</p>
             </div>
             <div className='flex justify-center'>
+                <Link to={'/order'}>
                 <button className='rounded-xl deepPurple text-white text-[32px] px-24 py-3 font-extrabold'>অর্ডার করতে চাই</button>
+                </Link>
             </div>
             <hr className='block mt-10' />
         </div>

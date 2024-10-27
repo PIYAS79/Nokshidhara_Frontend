@@ -35,7 +35,6 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        console.log(data.data)
         const user = data.data;
         //   // set user to redux state
         dispatch(setUser(user));

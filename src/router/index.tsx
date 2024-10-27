@@ -9,6 +9,7 @@ import Dash_ProcessPage from "../pages/Dash_ProcessPage";
 import Dash_DetailsPage from "../pages/Dash_DetailsPage";
 import Dashboard_PanelPage from "../pages/Dashboard_PanelPage";
 import Private_Page from "../pages/Private_Page";
+import Dash_PackaeUpdatePage from "../pages/Dash_PackaeUpdatePage";
 
 
 
@@ -51,7 +52,12 @@ const router = createBrowserRouter([
             {
                 path: 'details',
                 element: <Dash_DetailsPage />
-            }
+            },
+            {
+                path: 'details/:pid',
+                loader: ({ params }) => fetch(`http://localhost:5022/app/v1/package/one/${params.pid}`),
+                element: <Dash_PackaeUpdatePage />
+            },
         ]
     }
 ])

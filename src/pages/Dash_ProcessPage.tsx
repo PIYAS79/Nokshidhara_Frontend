@@ -41,7 +41,7 @@ const Dash_ProcessPage = () => {
                 >
                   See Note
                 </button>
-                <Web_Modal />
+                {/* <Web_Modal data={"wow"} /> */}
               </td>
               <td>Blue</td>
               <td>Blue</td>

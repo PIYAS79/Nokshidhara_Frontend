@@ -1,10 +1,26 @@
-import Web_Modal from "../components/Global/Web_Modal"
-
+import { useState } from "react"; // Import useState for local state management
+import { Single_Order_Type } from "../components/Global/Order_types";
+import { useGetAllOrderQuery } from "../redux/api/orderApi";
 
 const Dashboard_OrderPage = () => {
+  const { data: orders } = useGetAllOrderQuery(undefined);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [selectedOrderNote, setSelectedOrderNote] = useState(""); // State to store the selected order note
+
+  const openModal = (note: string) => {
+    setSelectedOrderNote(note); // Set the order note to display
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
   return (
     <div>
-      <h1 className="text-center text-3xl font-semibold textDeepPurple mt-3">Order Details</h1>
+      <h1 className="text-center text-3xl font-semibold textDeepPurple mt-3">
+        Order Details
+      </h1>
       <div className="overflow-x-auto m-5">
         <table className="table">
           {/* head */}
@@ -22,66 +38,55 @@ const Dashboard_OrderPage = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr className="hover">
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>
-                {/* Open the modal using document.getElementById('ID').showModal() method */}
-                <button
-                  onClick={() => {
-                    const modal = document.getElementById('my_modal_message');
-                    if (modal instanceof HTMLDialogElement) {
-                      modal.showModal();
-                    }
-                  }}
-                >
-                  See Note
-                </button>
-                <Web_Modal />
-              </td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>
-                <span className="text-blue-600 font-bold">processing</span>
-              </td>
-            </tr>
-            {/* row 2 */}
-            <tr className="hover">
-              <th>2</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>
-                <span className="text-blue-600 font-bold">processing</span>
-              </td>
-            </tr>
-            {/* row 3 */}
-            <tr className="hover">
-              <th>3</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>Blue</td>
-              <td>
-                <span className="text-green-600 font-bold">delevered</span>
-              </td>
-            </tr>
+            {/* Map over orders to display each order */}
+            {orders?.map((order: Single_Order_Type) => (
+              <tr key={order._id} className="hover">
+                <th>{order.orderNo}</th>
+                <td>{order.dateAndTime}</td>
+                <td>{order.name}</td>
+                <td>{order.phone}</td>
+                <td>{order.address}</td>
+                <td>
+                  {/* Button to see order note */}
+                  <button
+                    onClick={() => openModal(order.orderNote)} // Pass the order note to openModal
+                    className="text-blue-800 font-sans hover:underline"
+                  >
+                    See Note
+                  </button>
+                </td>
+                <td>{order.packageNo.join(", ")}</td> {/* Join package numbers if it's an array */}
+                <td>${order.totalPrice.toFixed(2)}</td> {/* Format price */}
+                <td className="font-sans text-xs font-semibold">
+                  <span className={
+                    order.status === "DELIVERED" ? "text-green-600 font-bold" :
+                      order.status === "CANCELLED" ? "text-red-600 font-bold" :
+                        order.status === "PROCESSING" ? "text-blue-600 font-bold" :
+                          "text-gray-600 font-bold"
+                  }>
+                    {order.status}
+                  </span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
-    </div>
-  )
-}
 
-export default Dashboard_OrderPage
+      {/* Modal for displaying order note */}
+      {isModalOpen && (
+        <dialog open className="modal">
+          <div className="modal-box lightPurple text-black">
+            <h3 className="font-bold text-lg textDeepPurple">Order Note</h3>
+            <p className="py-0">{selectedOrderNote}</p>
+            <div className="modal-action">
+              <button onClick={closeModal} className="btn deepPurple border-none text-white">Close</button>
+            </div>
+          </div>
+        </dialog>
+      )}
+    </div>
+  );
+};
+
+export default Dashboard_OrderPage;
