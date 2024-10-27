@@ -8,6 +8,7 @@ import Dashboard_OrderPage from "../pages/Dashboard_OrderPage";
 import Dash_ProcessPage from "../pages/Dash_ProcessPage";
 import Dash_DetailsPage from "../pages/Dash_DetailsPage";
 import Dashboard_PanelPage from "../pages/Dashboard_PanelPage";
+import Private_Page from "../pages/Private_Page";
 
 
 
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard_RootPage />,
+        element: <Private_Page><Dashboard_RootPage /></Private_Page>,
         children: [
             {
                 path: 'panel',

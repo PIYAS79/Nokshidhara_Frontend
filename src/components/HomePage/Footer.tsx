@@ -2,6 +2,7 @@ import WhiteLogo from '../../assets/white high.png'
 
 import { AiOutlineFacebook, AiOutlineGoogle, AiOutlineMail, AiOutlineWhatsApp, AiOutlineYoutube } from "react-icons/ai";
 import { AiOutlinePhone } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -45,7 +46,9 @@ const Footer = () => {
                 </div>
             </div>
             <div className='lightPurple h-[43px] flex justify-center items-center'>
-            <p className='text-md text-gray-700 font-sans'>&copy; Copyright Nakshidhara 2024. All rights reserved.</p>
+                <Link to={'/login'}>
+                    <p className='text-md text-gray-700 font-sans'>&copy; Copyright Nakshidhara 2024. All rights reserved.</p>
+                </Link>
             </div>
         </div>
     )

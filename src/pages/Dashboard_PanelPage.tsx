@@ -7,11 +7,15 @@ const Dashboard_PanelPage = () => {
       <hr className="block my-3" />
       <div className="max-w-2xl  mx-auto w-full flex p-3 gap-10">
         <div className="w-[50%] lightPurple textDeepPurple aspect-square rounded-xl flex flex-col justify-around items-center">
-          <h1 className="text-[2rem] font-semibold">Total Orders</h1>
+          <h1 className="text-[1.2rem] font-semibold">Total Orders</h1>
           <h1 className="text-[5rem] font-bold -mt-16">00</h1>
         </div>
         <div className="w-[50%] lightPurple textDeepPurple aspect-square rounded-xl flex flex-col justify-around items-center">
-          <h1 className="text-[2rem] font-semibold">Complete Orders</h1>
+          <h1 className="text-[1.2rem] font-semibold">Processing Orders</h1>
+          <h1 className="text-[5rem] font-bold -mt-16">00</h1>
+        </div>
+        <div className="w-[50%] lightPurple textDeepPurple aspect-square rounded-xl flex flex-col justify-around items-center">
+          <h1 className="text-[1.2rem] font-semibold">Complete Orders</h1>
           <h1 className="text-[5rem] font-bold -mt-16">00</h1>
         </div>
       </div>
