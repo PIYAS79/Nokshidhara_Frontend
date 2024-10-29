@@ -1,22 +1,46 @@
-
+import Dash_Banner_Control from "../components/Dashboard/Dash_Banner_Control"
+import Dash_Delivery_Sec from "../components/Dashboard/Dash_Delivery_Sec";
+import { useDashboardMetaDataQuery } from "../redux/api/authApi"
 
 const Dashboard_PanelPage = () => {
+
+  const { data } = useDashboardMetaDataQuery(undefined);
+
+
   return (
     <div className="p-3 font-sans h-full overflow-y-scroll">
       <h1 className="text-center text-3xl font-semibold textDeepPurple ">Admin Panel</h1>
       <hr className="block my-3" />
-      <div className="max-w-2xl  mx-auto w-full flex p-3 gap-10">
+      <div className="max-w-2xl mx-auto w-full flex p-3 gap-10">
         <div className="w-[50%] lightPurple textDeepPurple aspect-square rounded-xl flex flex-col justify-around items-center">
           <h1 className="text-[1.2rem] font-semibold">Total Orders</h1>
-          <h1 className="text-[5rem] font-bold -mt-16">00</h1>
+          <h1 className="text-[5rem] font-bold -mt-16">
+            {
+              data?.total_order < 10 ? `0${data?.total_order}`
+                :
+                data?.total_order
+            }
+          </h1>
         </div>
         <div className="w-[50%] lightPurple textDeepPurple aspect-square rounded-xl flex flex-col justify-around items-center">
           <h1 className="text-[1.2rem] font-semibold">Processing Orders</h1>
-          <h1 className="text-[5rem] font-bold -mt-16">00</h1>
+          <h1 className="text-[5rem] font-bold -mt-16">
+            {
+              data?.processing_order < 10 ? `0${data?.processing_order}`
+                :
+                data?.processing_order
+            }
+          </h1>
         </div>
         <div className="w-[50%] lightPurple textDeepPurple aspect-square rounded-xl flex flex-col justify-around items-center">
           <h1 className="text-[1.2rem] font-semibold">Complete Orders</h1>
-          <h1 className="text-[5rem] font-bold -mt-16">00</h1>
+          <h1 className="text-[5rem] font-bold -mt-16">
+            {
+              data?.complete_order < 10 ? `0${data?.complete_order}`
+                :
+                data?.complete_order
+            }
+          </h1>
         </div>
       </div>
 
@@ -24,41 +48,8 @@ const Dashboard_PanelPage = () => {
 
 
 
-      <form className="card-body max-w-2xl mx-auto  ">
-
-
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text text-[1rem] mb-2">Banner Photo Link 1 <span className="text-red-500">*</span></span>
-          </label>
-          <input type="text" className="input input-bordered border-black outline-none" required />
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text text-[1rem] mb-2">Banner Photo Link 2 <span className="text-red-500">*</span></span>
-          </label>
-          <input type="text" className="input input-bordered border-black outline-none" required />
-        </div>
-      
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text text-[1rem] mb-2">Banner Photo Link 3 <span className="text-red-500">*</span></span>
-          </label>
-          <input type="text" className="input input-bordered border-black outline-none" required />
-        </div>
-      
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text text-[1rem] mb-2">Banner Photo Link 4 <span className="text-red-500">*</span></span>
-          </label>
-          <input type="text" className="input input-bordered border-black outline-none" required />
-        </div>
-      
-
-        <div className="form-control mt-3">
-          <button className=" mx-auto rounded-xl py-3 px-8 deepPurple text-white text-[1.5rem]">Submit Banner Photos</button>
-        </div>
-      </form>
+      <Dash_Banner_Control />
+      <Dash_Delivery_Sec/>
     </div>
   )
 }
