@@ -37,8 +37,8 @@ const Dash_Banner_Control = () => {
                 console.log(result);
                 if (result.data) {
                   Swal.fire({
-                    title: "Cancelled !",
-                    text: "Your update has been cancelled.",
+                    title: "Updated !",
+                    text: "Successfully Updated !",
                     icon: "success"
                   });
                 } else {
