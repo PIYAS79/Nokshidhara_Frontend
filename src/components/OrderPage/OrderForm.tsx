@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '../../assets/packeg.svg';
 import { useGetAllPackageQuery } from '../../redux/api/packageApi';
 import { Single_Package_Type } from '../Global/package_type';
 import { useCreateOrderMutation } from '../../redux/api/orderApi';
+import { useGetDeliveryChargeQuery } from '../../redux/api/chargeApi';
 
 
 
@@ -10,14 +11,21 @@ const OrderForm = () => {
     const [createOrderFnc] = useCreateOrderMutation();
     const { data: x } = useGetAllPackageQuery(undefined);
     const packages = x?.filter((one: Single_Package_Type) => one.package_status === "ACTIVE");
+    const { data: chargeRes, isSuccess } = useGetDeliveryChargeQuery(undefined);
 
+    const [deliveryCharge, setDeliveryCharge] = useState(0);
+
+    useEffect(() => {
+        setDeliveryCharge(chargeRes ? chargeRes[0]?.charge : 0);
+    }, [chargeRes, isSuccess]);
+    
     const [selectedPackages, setSelectedPackages] = useState<{ id: string; price: number }[]>([]);
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
     const [orderNote, setOrderNote] = useState('');
-    const [showPopup, setShowPopup] = useState(false); 
-    
+    const [showPopup, setShowPopup] = useState(false);
+
     const handlePackageChange = (packageId: string, packagePrice: number) => {
         setSelectedPackages(prevSelected => {
             const isSelected = prevSelected.find(pkg => pkg.id === packageId);
@@ -54,7 +62,7 @@ const OrderForm = () => {
         } catch (err: any) {
             console.log(err);
         }
-        
+
         resetForm();
     };
 
@@ -150,11 +158,11 @@ const OrderForm = () => {
                         </li>
                         <li className="flex justify-between border-b border-black pb-2">
                             <label htmlFor="" className="text-[1.5rem]"> ডেলিভারি চার্জ</label>
-                            <label htmlFor="" className="text-[1.5rem]"> Tk 130.00</label>
+                            <label htmlFor="" className="text-[1.5rem]"> Tk {deliveryCharge}.00</label>
                         </li>
                         <li className="flex gap-8 justify-between ">
                             <label htmlFor="" className="text-[1.5rem] font-black"> সর্বমোট</label>
-                            <label htmlFor="" className="text-[1.5rem] font-black"> Tk {(totalPrice + 130).toFixed(2)}</label>
+                            <label htmlFor="" className="text-[1.5rem] font-black"> Tk {(totalPrice + deliveryCharge)}</label>
                         </li>
                     </ul>
 
