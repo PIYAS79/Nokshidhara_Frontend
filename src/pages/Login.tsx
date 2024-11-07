@@ -27,7 +27,6 @@ const Login = () => {
         email: email,
         password: password
       }).unwrap();
-      console.log(data)
       if (data.success) {
         Swal.fire({
           position: "center",
