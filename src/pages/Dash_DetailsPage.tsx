@@ -92,11 +92,11 @@ const Dash_DetailsPage = () => {
   };
 
   return (
-    <div className="p-3">
+    <div className="md:p-3 h-full overflow-y-scroll w-full">
       <h1 className="text-center text-3xl font-semibold textDeepPurple mt-3">Package Details</h1>
 
-      <div className="max-w-2xl mx-auto w-full bg-[#F5F5F5] p-3 rounded-lg mt-3">
-        <h1 className="text-center text-xl font-semibold deepPurple font-sans rounded-lg text-white py-1">
+      <div className="max-w-2xl mx-auto w-full bg-[#F5F5F5] md:p-3 rounded-lg mt-3">
+        <h1 className="text-center text-xl font-semibold deepPurple font-sans md:rounded-lg text-white py-1">
           Packages <span>{`( ${packages.length} )`}</span>
         </h1>
 
@@ -146,7 +146,7 @@ const Dash_DetailsPage = () => {
         {/* Add Package Modal */}
         <label
           htmlFor="my_modal_add_package"
-          className="textDeepPurple font-semibold font-sans mt-5 block cursor-pointer"
+          className="textDeepPurple font-semibold font-sans mt-5 block cursor-pointer text-center md:text-left pb-3 md:pb-0"
         >
           + Add more package
         </label>

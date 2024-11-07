@@ -57,7 +57,7 @@ const Dash_Banner_Control = () => {
 
 
     return (
-        <form onSubmit={handleBannerSubmit} className="card-body max-w-2xl mx-auto  ">
+        <form onSubmit={handleBannerSubmit} className="card-body w-full pt-5 md:pt-0 p-0 md:p-8 md:max-w-2xl mx-auto  ">
             <div className="form-control">
                 <label className="label">
                     <span className="label-text text-[1rem] mb-2">Banner Photo Link 1 <span className="text-red-500">*</span></span>
@@ -87,7 +87,7 @@ const Dash_Banner_Control = () => {
 
 
             <div className="form-control mt-3">
-                <button className=" mx-auto rounded-xl py-3 px-8 deepPurple text-white text-[1.5rem]">Submit Banner Photos</button>
+                <button className=" mx-auto rounded-xl py-3 px-8 deepPurple text-white  md:text-[1.5rem]">Submit Banner Photos</button>
             </div>
         </form>
     )

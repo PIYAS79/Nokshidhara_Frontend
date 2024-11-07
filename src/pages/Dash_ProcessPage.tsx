@@ -79,10 +79,10 @@ const Dash_ProcessPage = () => {
 
 
   return (
-    <div className="h-full overflow-y-scroll">
+    <div className="h-full overflow-y-scroll w-full">
       <h1 className="text-center text-3xl font-semibold textDeepPurple mt-3">Processing Orders</h1>
-      <div className="overflow-x-auto m-5">
-        <table className="table">
+      <div className="overflow-x-auto md:m-5">
+        <table className="table text-xs md:text-md">
           {/* head */}
           <thead className="deepPurple text-white font-sans">
             <tr>
