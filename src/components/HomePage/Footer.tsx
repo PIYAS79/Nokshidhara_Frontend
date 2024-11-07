@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div>
-            <div className="deepPurple h-[240px]">
-                <div className='content_container mx-auto flex justify-between items-center h-full'>
-                    <div className='text-white my-auto'>
+            <div className="deepPurple md:h-[240px] py-2 md:py-0">
+                <div className='content_container mx-auto flex flex-col md:flex-row justify-between items-center h-full'>
+                    <div className='text-white my-auto text-md'>
                         <div className='flex items-center gap-3'>
                             <AiOutlineMail className='text-xl' />
                             <p>nakshidhara@gmail.com</p>
@@ -25,7 +25,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <img width={265} src={WhiteLogo} alt="" />
+                        <img src={WhiteLogo} alt="" className='my-5 md:my-0 w-[100px] md:w-[265px]' />
                     </div>
                     <div>
                         <div className='text-white my-auto'>
@@ -33,11 +33,11 @@ const Footer = () => {
                                 <p>YouTube</p>
                                 <AiOutlineYoutube className='text-xl ' />
                             </div>
-                            <div className='flex justify-end items-center gap-3 mt-2'>
+                            <div className='flex justify-end items-center gap-3 mt-0 md:mt-2'>
                                 <p>Facebook</p>
                                 <AiOutlineFacebook className='text-xl' />
                             </div>
-                            <div className='flex justify-end items-center gap-3 mt-2'>
+                            <div className='flex justify-end items-center gap-3 mt-0 md:mt-2'>
                                 <p>WhatsApp</p>
                                 <AiOutlineWhatsApp className='text-xl' />
                             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='lightPurple h-[43px] flex justify-center items-center'>
+            <div className='lightPurple h-[30px] md:h-[43px] flex justify-center items-center text-xs'>
                 <Link to={'/login'}>
                     <p className='text-md text-gray-700 font-sans'>&copy; Copyright Nakshidhara 2024. All rights reserved.</p>
                 </Link>

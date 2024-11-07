@@ -4,7 +4,7 @@ import Delevary from '../../assets/delevary.svg'
 
 const ServiceSection = () => {
     return (
-        <div className="bg-[#D9D9D9] py-24">
+        <div className="bg-[#D9D9D9] py-24 hidden">
             <div className='max-w-[45%] mx-auto'>
                 <div className='flex justify-between mb-[40px]'>
                     <div className='mr-[190px]'>
