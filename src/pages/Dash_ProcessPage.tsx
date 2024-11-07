@@ -94,7 +94,7 @@ const Dash_ProcessPage = () => {
             </tr>
           </thead>
           <tbody>
-            {orders?.map((order: Single_Order_Type, index: number) => (
+            {orders?.map((order: Single_Order_Type) => (
               <tr className="hover" key={order._id}>
                 <th>{order.orderNo}</th>
                 <td>{order.dateAndTime}</td>
