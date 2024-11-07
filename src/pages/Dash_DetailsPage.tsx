@@ -26,7 +26,6 @@ const Dash_DetailsPage = () => {
 
     try {
       const data: any = await createPackageFnc(newPackage);
-      console.log(data);
 
       if (data?.data?.success) {
         Swal.fire({
@@ -70,7 +69,6 @@ const Dash_DetailsPage = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           const result = await deletePackageFnc(pid);
-          console.log(result);
           if (result.data) {
             Swal.fire({
               title: "Deleted!",

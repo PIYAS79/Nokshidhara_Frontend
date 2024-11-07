@@ -26,7 +26,6 @@ const Dash_Delivery_Sec = () => {
             }).then(async (result) => {
                 if (result.isConfirmed) {
                     const result = await updateChargeFnc({ data: { charge: charge }, cid: chargeRes[0]._id });
-                    console.log(result);
                     if (result.data) {
                         Swal.fire({
                             title: "Updated !",

@@ -22,7 +22,6 @@ const Dash_ProcessPage = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           const result = await updateOrderStatusFnc({ data: { status: "CANCELLED" }, oid });
-          console.log(result);
           if (result.data) {
             Swal.fire({
               title: "Cancelled !",
@@ -56,7 +55,6 @@ const Dash_ProcessPage = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           const result = await updateOrderStatusFnc({ data: { status: "DELIVERED" }, oid });
-          console.log(result);
           if (result.data) {
             Swal.fire({
               title: "Delivered !",

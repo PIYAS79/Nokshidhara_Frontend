@@ -34,7 +34,6 @@ const Dash_Banner_Control = () => {
             }).then(async (result) => {
               if (result.isConfirmed) {
                 const result = await udpateBannerLinkFnc(sendedData);
-                console.log(result);
                 if (result.data) {
                   Swal.fire({
                     title: "Updated !",

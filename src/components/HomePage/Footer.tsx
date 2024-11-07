@@ -1,6 +1,6 @@
 import WhiteLogo from '../../assets/white high.png'
 
-import { AiOutlineFacebook, AiOutlineGoogle, AiOutlineMail, AiOutlineWhatsApp, AiOutlineYoutube } from "react-icons/ai";
+import { AiOutlineFacebook, AiOutlineMail, AiOutlineWhatsApp, AiOutlineYoutube } from "react-icons/ai";
 import { AiOutlinePhone } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
@@ -13,15 +13,21 @@ const Footer = () => {
                     <div className='text-white my-auto text-md'>
                         <div className='flex items-center gap-3'>
                             <AiOutlineMail className='text-xl' />
-                            <p>nakshidhara@gmail.com</p>
+                            <a href="mailto:nakshidhara@gmail.com" target="_blank" rel="noopener noreferrer">
+                                <p>nakshidhara@gmail.com</p>
+                            </a>
                         </div>
                         <div className='flex items-center gap-3 mt-2'>
                             <AiOutlinePhone className='text-xl' />
-                            <p>017-547-98968</p>
+                            <a href="tel:+8801754798968" className='text-white'>
+                                <p>017-547-98968</p>
+                            </a>
                         </div>
                         <div className='flex items-center gap-3 mt-2'>
                             <AiOutlinePhone className='text-xl' />
-                            <p>017-547-98968</p>
+                            <a href="tel:+8801754798968" className='text-white'>
+                                <p>017-547-98968</p>
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -34,11 +40,15 @@ const Footer = () => {
                                 <AiOutlineYoutube className='text-xl ' />
                             </div>
                             <div className='flex justify-end items-center gap-3 mt-0 md:mt-2'>
-                                <p>Facebook</p>
+                                <a href="https://m.me/430591103463403" target="_blank" rel="noopener noreferrer">
+                                    <p>Facebook</p>
+                                </a>
                                 <AiOutlineFacebook className='text-xl' />
                             </div>
                             <div className='flex justify-end items-center gap-3 mt-0 md:mt-2'>
-                                <p>WhatsApp</p>
+                                <a href="https://wa.me/+8801795072259" target="_blank" rel="noopener noreferrer">
+                                    <p>WhatsApp</p>
+                                </a>
                                 <AiOutlineWhatsApp className='text-xl' />
                             </div>
                         </div>

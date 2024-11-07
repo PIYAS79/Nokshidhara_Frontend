@@ -19,7 +19,6 @@ const Dash_PackaeUpdatePage = () => {
         };
         try {
             const result = await updatePackageFnc({ data: updatedPackage, pid: data?._id });
-            console.log(result);
             if (result.data) {
                 Swal.fire({
                     position: 'center',

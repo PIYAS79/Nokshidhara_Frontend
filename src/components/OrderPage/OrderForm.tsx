@@ -54,7 +54,6 @@ const OrderForm = () => {
 
         try {
             const result = await createOrderFnc(formData);
-            console.log(result);
             if (result?.data?.success) {
                 setShowPopup(true);
                 setTimeout(() => setShowPopup(false), 2000);

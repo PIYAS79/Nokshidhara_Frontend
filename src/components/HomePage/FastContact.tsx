@@ -6,7 +6,7 @@ const FastContact = () => {
     return (
         <div className='text-[1rem] md:text-[2rem] content_container mx-auto my-5 md:my-10 md:px-0'>
             <div className='flex justify-center'>
-                <a href="https://wa.me/017-54798968" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/+8801795072259" target="_blank" rel="noopener noreferrer">
                     <button className='rounded-xl deepPurple text-white text-[1rem] md:text-[2rem] w-[375px] py-2 md:py-3 font-extrabold'>
                         <img src={Whatsapp} alt="" className='inline mr-5 w-[20px] md:w-[46px]' />
                         হোয়াটসঅ্যাপ অর্ডার
@@ -14,7 +14,7 @@ const FastContact = () => {
                 </a>
             </div>
             <div className='flex justify-center mt-5 md:mt-10'>
-                <a href="https://m.me/rafeerawshony.rizvee" target="_blank" rel="noopener noreferrer">
+                <a href="https://m.me/430591103463403" target="_blank" rel="noopener noreferrer">
                     <button className='rounded-xl deepPurple text-white text-[1rem] md:text-[2rem] w-[375px] py-2 md:py-3 font-extrabold'>
                         <img src={Messenger} alt="" className='inline mr-5 w-[20px] md:w-[46px]' />
                         মেসেঞ্জার অর্ডার
