@@ -2,7 +2,6 @@ import baseApi from "./baseApi";
 
 
 
-
 const bannerApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         getWebBannerLinks: builder.query({
