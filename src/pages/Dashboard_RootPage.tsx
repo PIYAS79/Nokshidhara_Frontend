@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom"
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom"
 import whiteLogo from '../assets/white high.png'
 import { useDispatch } from "react-redux"
 import { removeAdmin } from "../redux/features/authSlice"
@@ -32,7 +32,9 @@ const Dashboard_RootPage = () => {
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                 <nav className="menu lightPurple min-h-full w-72 p-4">
                     <div className="deepPurple flex justify-center items-center w-full mb-4 py-2 rounded-lg">
-                        <img className='w-[100px]' src={whiteLogo} />
+                        <Link to={'/'}>
+                            <img className='w-[100px]' src={whiteLogo} />
+                        </Link>
                     </div>
                     <NavLink to={'panel'} className="block p-2 text-center font-sans rounded-lg w-full text-white deepPurple">Admin Panel</NavLink>
                     <NavLink to={'order'} className="block p-2 text-center font-sans rounded-lg w-full text-white deepPurple mt-4">Orders</NavLink>

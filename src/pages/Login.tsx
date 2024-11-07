@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import logo from '../assets/NakshiDharaMain 0.png'
 import { useLoginUserMutation } from '../redux/api/authApi';
 import { useAppDispatch } from '../redux/hooks';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setUser } from '../redux/features/authSlice';
 import Swal from 'sweetalert2';
 
@@ -27,6 +27,7 @@ const Login = () => {
         email: email,
         password: password
       }).unwrap();
+      console.log(data)
       if (data.success) {
         Swal.fire({
           position: "center",
@@ -42,6 +43,7 @@ const Login = () => {
         navigate(location?.state ? location?.state : '/dashboard/panel');
       }
     } catch (err: any) {
+      console.log(err)
       Swal.fire({
         position: "center",
         icon: "error",
@@ -60,7 +62,9 @@ const Login = () => {
     <div className='max-w-lg flex flex-col justify-center  mx-auto'>
 
       <div className=' flex justify-center'>
-        <img src={logo} width={150} alt="" />
+        <Link to={'/'}>
+          <img src={logo} width={150} alt="" />
+        </Link>
       </div>
       <form onSubmit={handleOnSubmit} className="card-body pt-0">
         <div className="form-control">

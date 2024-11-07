@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'details/:pid',
-                loader: ({ params }) => fetch(`http://localhost:5022/app/v1/package/one/${params.pid}`),
+                loader: ({ params }) => fetch(`https://nokshi-dhara-backend-two.vercel.app/app/app/v1/package/one/${params.pid}`),
                 element: <Dash_PackaeUpdatePage />
             },
         ]
