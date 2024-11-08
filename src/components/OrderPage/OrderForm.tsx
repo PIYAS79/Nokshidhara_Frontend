@@ -18,7 +18,7 @@ const OrderForm = () => {
     useEffect(() => {
         setDeliveryCharge(chargeRes ? chargeRes[0]?.charge : 0);
     }, [chargeRes, isSuccess]);
-    
+
     const [selectedPackages, setSelectedPackages] = useState<{ id: string; price: number }[]>([]);
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
