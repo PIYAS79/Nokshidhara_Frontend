@@ -26,7 +26,7 @@ const Footer = () => {
                         <div className='flex items-center gap-3 mt-2'>
                             <AiOutlinePhone className='text-xl' />
                             <a href="tel:+8801754798968" className='text-white'>
-                                <p>01795072259</p>
+                                <p>017-950-72259</p>
                             </a>
                         </div>
                     </div>
